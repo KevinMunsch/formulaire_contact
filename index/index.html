@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <meta charset="utf-8">
-    <title></title>
+    <title>formulaire_contact</title>
   </head>
 
   <body>
@@ -21,14 +21,56 @@
 
       <main>
         <select class="" id="monselect">
-          <option value="liste">Liste de mes contacts</option>
-          <option value="ajouter">Ajouter votre contact</option>
-          <option value="nombre">Combien de contacts avez vous?</option>
+          <option value="liste" id="liste" selected>Liste de mes contacts</option>
+          <option value="ajouter" id="ajouter">Ajouter votre contact</option>
+          <option value="nombre" id="nombre">Combien de contacts avez vous?</option>
         </select>
+
+     <div id="formulaire">
+    </div>
+
+
+
+
      </main>
 
 
+ <script type="text/javascript">
 
+ var a=document.getElementById("monselect");
+ a.addEventListener("click",(aparaitre)=> {
+   if (a.value=="ajouter") {
+     document.getElementById('formulaire').innerHTML='<form>' +
+
+            '<input type="text" name="nom" value="" id="nom" placeholder="Nom"/>' +
+
+            '<input type="text" name="prenom" value="" id="prenom" placeholder="Prénom"/>' +
+
+            '<input type="text" name="numero" value="" id="numero" placeholder="Numéro de téléphone"/>' +
+
+            '<input type="submit" value="Ajouter le contact">';
+
+    } else if (a.value == "liste") {
+
+        document.getElementById('formulaire').innerHTML = "test2";
+
+    } else if (a.value == "nombre") {
+
+        document.getElementById('formulaire').innerHTML = "test3";
+
+    } else {
+
+        document.getElementById('formulaire').innerHTML = "rien";
+
+    }
+
+});
+
+
+
+
+
+ </script>
 
 
   </body>

@@ -9,12 +9,12 @@ body {
 
 aside {
   width: 30%;
-  background-color: red;
+  background-color: white;
 }
 
 /* Main css */
 
 main {
   width: 70%;
-  background-color: green;
+  background-color: black;
 }
