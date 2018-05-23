@@ -21,9 +21,11 @@
 
       <main>
         <select class="" id="monselect">
-          <option value="liste" id="liste" selected>Liste de mes contacts</option>
+          <option value="choix" id="choix" selected>Quel est votre choix?</option>
+          <option value="liste" id="liste">Liste de mes contacts</option>
           <option value="ajouter" id="ajouter">Ajouter votre contact</option>
           <option value="nombre" id="nombre">Combien de contacts avez vous?</option>
+
         </select>
 
      <div id="lol">
@@ -43,13 +45,16 @@
 
 
  var number = [];
+ var clicks = 0;
 
  function escalibur(){
 
+   clicks+=1;
 
    number.push(document.getElementById("nom").value);
    number.push(document.getElementById("prenom").value);
    number.push(document.getElementById("numero").value);
+   number.push("");
 
 
    document.getElementById("nom").value="";
@@ -58,6 +63,9 @@
 
 
  }
+
+
+
 
  var a = document.getElementById("monselect");
  a.addEventListener("change",(aparaitre) => {
@@ -72,11 +80,13 @@
 
             '<input type="button" onclick="escalibur()" id="enregistrer" value="Ajouter le contact"/>';
     } else if (a.value == "liste") {
-     document.getElementById('lol').innerHTML=number.join();
+     document.getElementById('lol').innerHTML=number.join('<br/>');
 
     }
     else if (a.value == "nombre") {
-       // document.getElementById('lol').innerHTML = "<h4>NOMBRE DE CONTACTS</h4>";
+       document.getElementById("lol").innerHTML = 'Nombre de Contacts:'+clicks;
+
+
     }
     console.log(number);
 });
