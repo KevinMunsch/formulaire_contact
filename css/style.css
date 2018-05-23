@@ -16,5 +16,9 @@ aside {
 
 main {
   width: 70%;
-  background-color: black;
+
+}
+
+#formulaire {
+  background-color: white;
 }

@@ -26,10 +26,14 @@
           <option value="nombre" id="nombre">Combien de contacts avez vous?</option>
         </select>
 
-     <div id="formulaire">
+     <div id="lol">
     </div>
+    <div id="lol2">
+   </div>
 
 
+
+</form>
 
 
      </main>
@@ -37,10 +41,28 @@
 
  <script type="text/javascript">
 
- var a=document.getElementById("monselect");
- a.addEventListener("click",(aparaitre)=> {
-   if (a.value=="ajouter") {
-     document.getElementById('formulaire').innerHTML='<form>' +
+
+ var number = [];
+
+ function escalibur(){
+
+
+   number.push(document.getElementById("nom").value);
+   number.push(document.getElementById("prenom").value);
+   number.push(document.getElementById("numero").value);
+
+
+   document.getElementById("nom").value="";
+   document.getElementById("prenom").value="";
+   document.getElementById("numero").value="";
+
+
+ }
+
+ var a = document.getElementById("monselect");
+ a.addEventListener("change",(aparaitre) => {
+   if (a.value=="ajouter")  {
+     document.getElementById('lol').innerHTML='<form id="form2">' +
 
             '<input type="text" name="nom" value="" id="nom" placeholder="Nom"/>' +
 
@@ -48,26 +70,16 @@
 
             '<input type="text" name="numero" value="" id="numero" placeholder="Numéro de téléphone"/>' +
 
-            '<input type="submit" value="Ajouter le contact">';
-
+            '<input type="button" onclick="escalibur()" id="enregistrer" value="Ajouter le contact"/>';
     } else if (a.value == "liste") {
-
-        document.getElementById('formulaire').innerHTML = "test2";
-
-    } else if (a.value == "nombre") {
-
-        document.getElementById('formulaire').innerHTML = "test3";
-
-    } else {
-
-        document.getElementById('formulaire').innerHTML = "rien";
+     document.getElementById('lol').innerHTML=number.join();
 
     }
-
+    else if (a.value == "nombre") {
+       // document.getElementById('lol').innerHTML = "<h4>NOMBRE DE CONTACTS</h4>";
+    }
+    console.log(number);
 });
-
-
-
 
 
  </script>
